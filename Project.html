@@ -37,27 +37,29 @@
         }
     </style>
 </head>
-<body class="bg-gray-900 flex flex-col items-center h-screen">
-    <nav class="bg-gray-800 p-3 rounded-2xl shadow-lg w-full max-w-2xl mx-auto">
-        <ul class="flex space-x-8 justify-center">
-            <li class="relative group">
-                <a href="./index.html" class="text-white text-lg font-semibold transition-all duration-300">Home</a>
+<body class="bg-gray-900 text-white flex flex-col items-center h-screen">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 p-4 rounded-2xl shadow-lg w-full max-w-4xl mx-auto mt-6 fade-in">
+        <ul class="flex justify-center space-x-10">
+            <li class="group relative">
+                <a href="./index.html" class="text-lg font-semibold hover:text-blue-500 transition-all duration-300">Home</a>
                 <span class="absolute left-0 bottom-0 w-0 h-1 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
-            <li class="relative group">
-                <a href="./Project.html" class="text-white text-lg font-semibold transition-all duration-300">Projects</a>
+            <li class="group relative">
+                <a href="./Project.html" class="text-lg font-semibold hover:text-red-500 transition-all duration-300">Projects</a>
                 <span class="absolute left-0 bottom-0 w-0 h-1 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
-            <li class="relative group">
-                <a href="./html.html" class="text-white text-lg font-semibold transition-all duration-300">Resume</a>
+            <li class="group relative">
+                <a href="./html.html" class="text-lg font-semibold hover:text-green-500 transition-all duration-300">Resume</a>
                 <span class="absolute left-0 bottom-0 w-0 h-1 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
-            <li class="relative group">
-                <a href="./Photos.html" class="text-white text-lg font-semibold transition-all duration-300">Photography</a>
+            <li class="group relative">
+                <a href="./Photos.html" class="text-lg font-semibold hover:text-purple-500 transition-all duration-300">Photography</a>
                 <span class="absolute left-0 bottom-0 w-0 h-1 bg-purple-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
-            <li class="relative group">
-                <a href="./about.html" class="text-white text-lg font-semibold transition-all duration-300">About Me</a>
+            <li class="group relative">
+                <a href="./about.html" class="text-lg font-semibold hover:text-yellow-500 transition-all duration-300">About Me</a>
                 <span class="absolute left-0 bottom-0 w-0 h-1 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
         </ul>
@@ -71,7 +73,7 @@
     </div>
 
     <!-- Projects Section -->
-    <div class="mt-20 flex flex-wrap justify-center gap-8">
+    <div class="mt-20 flex flex-wrap justify-center gap-8 mb-10">
         <div class="project-item bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-2xl flex items-center gap-8">
             <div>
                 <h3 class="text-white text-2xl font-semibold mb-4">Pong Game</h3>
@@ -89,10 +91,10 @@
             </div>
             <!-- Image Island -->
             <div class="bg-gray-700 p-4 rounded-lg shadow-md">
-                <img src="./images/pong.png" alt="Pong Game" class="w-200000 rounded-lg">
+                <img src="./images/pong.png" alt="Pong Game" class="w-full rounded-lg">
             </div>
         </div>
-    
+
         <div class="project-item bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-2xl flex items-center gap-8">
             <div>
                 <h3 class="text-white text-2xl font-semibold mb-4">Flappy Bird</h3>
@@ -109,8 +111,6 @@
             </div>
         </div>
     </div>
-
-    
 
     <!-- Footer Section -->
     <footer class="footer mt-auto w-full bg-gray-800 text-white text-center p-4">
