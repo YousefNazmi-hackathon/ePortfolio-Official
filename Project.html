@@ -74,6 +74,7 @@
 
     <!-- Projects Section -->
     <div class="mt-20 flex flex-wrap justify-center gap-8 mb-10">
+        <!-- Pong Game -->
         <div class="project-item bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-2xl flex items-center gap-8">
             <div>
                 <h3 class="text-white text-2xl font-semibold mb-4">Pong Game</h3>
@@ -84,7 +85,7 @@
                     <a href="./pong.html" class="bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-600 shadow-lg hover:shadow-2xl">
                         Play
                     </a>
-                    <a href="https://hwdsbonca-my.sharepoint.com/:u:/g/personal/yabdelsa2862_hwdsb_on_ca/EZaHTH1NmchGmjc24FJQvRcBbAyqDosq3suZq5g_mpVeYQ?e=ingN2Z" class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-600 shadow-lg hover:shadow-2xl">
+                    <a href="https://github.com/YousefNazmi-hackathon/Pong/releases/download/python/PONG.PYTHON.7z" download class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-600 shadow-lg hover:shadow-2xl" onclick="showDownloadMessage(event)">
                         Download
                     </a>
                 </div>
@@ -95,22 +96,6 @@
             </div>
         </div>
 
-        <div class="project-item bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-2xl flex items-center gap-8">
-            <div>
-                <h3 class="text-white text-2xl font-semibold mb-4">Flappy Bird</h3>
-                <p class="text-white mb-4">
-                    Download my Flappy Bird project and play it on your computer! This game was created using Python and Pygame.
-                </p>
-                <a href="https://hwdsbonca-my.sharepoint.com/:u:/g/personal/yabdelsa2862_hwdsb_on_ca/Eb_I1qjcw6pMkw-SF6m2NUkBI4_SGb2tGoDWOLNx0ZtoCg?e=LyzaF7" class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-600 shadow-lg hover:shadow-2xl">
-                    Download
-                </a>
-            </div>
-            <!-- Image Island -->
-            <div class="bg-gray-700 p-4 rounded-lg shadow-md">
-                <img src="./images/flappy-bird.jpg" alt="Flappy Bird" class="w-full rounded-lg">
-            </div>
-        </div>
-    
         <!-- AI Snake -->
         <div class="project-item bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-2xl relative overflow-hidden group">
             <!-- Background GIF -->
@@ -127,8 +112,7 @@
                     <p class="text-white mb-4">
                         An AI that plays the classic Snake game! Implemented using Python and machine learning techniques. Watch it in action!
                     </p>
-                    <a href="https://hwdsbonca-my.sharepoint.com/:u:/g/personal/yabdelsa2862_hwdsb_on_ca/EerjuNY8X_NCuPUiTKj1CUgBUqIW2lAYyqZge_RQdIePZw?e=uCVGQ2"
-                        class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-600 shadow-lg hover:shadow-2xl">
+                    <a href="https://github.com/YousefNazmi-hackathon/Ai-Snake/releases/download/Ai_Snake/SnakeAI.7z" download class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-600 shadow-lg hover:shadow-2xl" onclick="showDownloadMessage(event)">
                         Download
                     </a>
                 </div>
@@ -140,8 +124,25 @@
                 </div>
             </div>
         </div>
-        
-        
+
+        <!-- Flappy Bird -->
+        <div class="project-item bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-2xl flex items-center gap-8">
+            <div>
+                <h3 class="text-white text-2xl font-semibold mb-4">Flappy Bird</h3>
+                <p class="text-white mb-4">
+                    Download my Flappy Bird project and play it on your computer! This game was created using Python and Pygame.
+                </p>
+                <a href="https://hwdsbonca-my.sharepoint.com/:u:/g/personal/yabdelsa2862_hwdsb_on_ca/Eb_I1qjcw6pMkw-SF6m2NUkBI4_SGb2tGoDWOLNx0ZtoCg?e=LyzaF7" class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-600 shadow-lg hover:shadow-2xl" onclick="showDownloadMessage(event)">
+                    Download
+                </a>
+            </div>
+            <!-- Image Island -->
+            <div class="bg-gray-700 p-4 rounded-lg shadow-md">
+                <img src="./images/flappy-bird.jpg" alt="Flappy Bird" class="w-full rounded-lg">
+            </div>
+        </div>
+
+        <!-- Careers Affected by AI -->
         <div class="project-item bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-2xl flex items-center gap-8 group relative overflow-hidden">
             <div>
                 <h3 class="text-white text-2xl font-semibold mb-4">Careers Affected by AI</h3>
@@ -156,7 +157,20 @@
                 <img src="./images/ai-careers.png" alt="AI Careers Presentation" class="w-full rounded-lg transition-opacity duration-300 group-hover:opacity-0">
                 <video src="./assets/Careers.mp4" autoplay muted loop playsinline
                     class="absolute inset-0 w-full h-full object-cover rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-    </video>
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay and Message -->
+    <div id="download-overlay" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md hidden z-50 transition-opacity duration-500 opacity-0">
+        <div class="absolute top-5 right-5 text-center text-white">
+            <p class="text-2xl mb-4">Check your downloads</p>
+            <div class="relative">
+                <!-- Arrow pointing to the top-right -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                </svg>
             </div>
         </div>
     </div>
@@ -202,6 +216,35 @@
                 iconContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-3-3m3 3l3-3M5 20h14" /></svg>`; // About icon
             }
         };
+
+        function showDownloadMessage(event) {
+            event.preventDefault(); // Prevent default link behavior
+
+            // Trigger the download first
+            const link = event.target;
+            const href = link.getAttribute("href");
+            const a = document.createElement("a");
+            a.href = href;
+            a.download = "";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            // Show the blur overlay with animation
+            const overlay = document.getElementById("download-overlay");
+            overlay.classList.remove("hidden");
+            setTimeout(() => {
+                overlay.classList.add("opacity-100");
+            }, 10); // Small delay to trigger the CSS transition
+
+            // Hide the overlay after 5 seconds
+            setTimeout(() => {
+                overlay.classList.remove("opacity-100");
+                setTimeout(() => {
+                    overlay.classList.add("hidden");
+                }, 500); // Wait for the fade-out animation to complete
+            }, 5000);
+        }
     </script>
 </body>
 </html>
