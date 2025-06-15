@@ -35,6 +35,21 @@
             opacity: 1;
             backdrop-filter: blur(0px);
         }
+
+        /* Animation for smooth transitions */
+        .fade-in {
+            animation: fadeIn 1.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-white flex flex-col items-center h-screen">
@@ -158,6 +173,22 @@
                 <video src="./assets/Careers.mp4" autoplay muted loop playsinline
                     class="absolute inset-0 w-full h-full object-cover rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </video>
+            </div>
+        </div>
+
+        <!-- Unity Game Project Card -->
+        <div class="project-item bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-2xl flex flex-col md:flex-row items-center gap-8 fade-in">
+            <div class="flex-1">
+                <h3 class="text-2xl font-bold mb-2">Unity Game</h3>
+                <p class="mb-4">A fun Unity game made by me! Play it in your browser or download to play offline.</p>
+                <div class="flex gap-4">
+                    <a href="UnityGame.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition">Play Now</a>
+                    <a href="UnityGame.zip" download class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold transition">Download</a>
+                </div>
+            </div>
+            <div>
+                <!-- You can add a Unity logo or screenshot here -->
+                <img src="images/unity-logo.png" alt="Unity Game" class="w-32 h-32 object-contain rounded-lg bg-gray-700 p-2">
             </div>
         </div>
     </div>

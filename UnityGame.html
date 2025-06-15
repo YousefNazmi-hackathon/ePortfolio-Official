@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unity Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in { animation: fadeIn 1.5s ease-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center min-h-screen">
+
+    <!-- Top Bar: Back to Projects + Navigation Bar -->
+    <div class="w-full flex flex-row items-center justify-center mt-6 fade-in" style="max-width: 64rem;">
+        <!-- Back to Projects Button -->
+        <a href="./Project.html" class="text-lg font-semibold hover:text-blue-500 transition-all duration-300 px-4 py-2 rounded-lg ml-2">
+            &larr; Back to Projects
+        </a>
+        <!-- Navigation Bar -->
+        <nav class="flex-1">
+            <ul class="flex justify-center space-x-10">
+                <li class="group relative">
+                    <a href="./index.html" class="text-lg font-semibold hover:text-blue-500 transition-all duration-300">Home</a>
+                </li>
+                <li class="group relative">
+                    <a href="./Project.html" class="text-lg font-semibold hover:text-red-500 transition-all duration-300">Projects</a>
+                </li>
+                <li class="group relative">
+                    <a href="./html.html" class="text-lg font-semibold hover:text-green-500 transition-all duration-300">Resume</a>
+                </li>
+                <li class="group relative">
+                    <a href="./Photos.html" class="text-lg font-semibold hover:text-purple-500 transition-all duration-300">Photography</a>
+                </li>
+                <li class="group relative">
+                    <a href="./about.html" class="text-lg font-semibold hover:text-yellow-500 transition-all duration-300">About Me</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="fade-in w-full flex flex-col items-center mt-10">
+        <h1 class="text-3xl font-bold mb-6">Unity Game</h1>
+        <!-- Replace src with your Unity WebGL build folder/index.html -->
+        <iframe src="UnityBuild/index.html" width="1000" height="650" class="rounded-lg shadow-lg border-0"></iframe>
+        <p class="mt-6">If the game doesn't load, please check your browser settings or try downloading it.</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer mt-auto w-full bg-gray-800 text-white text-center p-4 fade-in">
+        <p>&copy; 2025 my ePortfolio. All rights reserved.</p>
+        <div class="footer-links mt-2">
+            <a href="./about.html" class="hover:underline">About</a> |
+            <a href="mailto:your@email.com" class="hover:underline">Contact</a> |
+            <a href="https://www.instagram.com/yousef_photography_2862?igsh=MW9hdGVxYTZxdGhmbQ%3D%3D&utm_source=qr" class="hover:underline">Social Media</a>
+        </div>
+    </footer>
+
+</body>
+</html>
