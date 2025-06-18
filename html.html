@@ -37,6 +37,58 @@
             opacity: 1;
             backdrop-filter: blur(0px);
         }
+        .resume-container {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            width: 100%;
+            max-width: 164px;
+            margin: 0 auto;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 0;
+            border-radius: 24px;
+            border: 1px solid #388e3c;
+            background: #4caf50;
+            color: #fff;
+            padding: 14px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s;
+            height: 48px;
+            line-height: 20px;
+            align-self: flex-start;
+            white-space: nowrap;
+        }
+
+        .download-btn:hover {
+            background: #388e3c;
+        }
+
+        .resume-container-horizontal {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 32px;
+        }
+
+        .resume-embed {
+            width: 900px;   /* Adjust as needed */
+            height: 700px; /* Adjust as needed */
+            border: 1px solid #ccc;
+            background: #fff;
+        }
+
+        .subtitle {
+            margin-bottom: 32px; /* Add space below the subtitle */
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-white flex flex-col items-center h-full">
@@ -67,17 +119,17 @@
         </ul>
     </nav>
 
-    <div id="sidebar" class="fixed top-4 left-4 bg-gray-800 p-3 rounded-xl shadow-lg">
-        <div id="icon-container" class="text-white"></div>
-    </div>
+
+    
 
     <div class="main-content text-white text-center mt-10 mb-10">
         <h1 class="text-3xl font-bold">My Resume</h1>
-        <p class="mt-2">Here is my resume</p>
-        <div class="pdf-container mt-5">
-            <iframe src="Yousef Resume .pdf" width="1000px" height="600px" class="border-none mb-10" 
-                style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);"></iframe>
+        <h2 class="subtitle">Here is my resume</h2>
+        <div class="resume-container-horizontal">
+            <iframe src="Yousef Resume .pdf" class="resume-embed"></iframe>
+            <a href="Yousef Resume .pdf" class="download-btn" download>Download Resume</a>
         </div>
+        
     </div>
 
     <footer class="footer mt-auto w-full bg-gray-800 text-white text-center p-4">
@@ -95,7 +147,7 @@
         </div>
     </footer>
 
-    <script>
+     <script>
         function copyPhoneNumber() {
             const phoneElement = document.getElementById("phone-container");
             const phoneNumber = document.getElementById("phone-number").innerText;
@@ -105,22 +157,63 @@
             });
         }
 
+        // Update the icon based on the current page
         window.onload = function() {
             const iconContainer = document.getElementById("icon-container");
             const currentPage = window.location.pathname;
 
-            if (currentPage.includes("html.html")) {
-                iconContainer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10M7 12h10M7 17h10M4 4h16v16H4V4z" /></svg>';
-            } else if (currentPage.includes("Photos.html")) {
-                iconContainer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v18h14V3H5z" /></svg>';
-            } else if (currentPage.includes("index.html")) {
-                iconContainer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16M4 12h16" /></svg>';
+            if (currentPage.includes("index.html")) {
+                iconContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" /></svg>`; // Home icon
             } else if (currentPage.includes("Project.html")) {
-                iconContainer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3v18h18V3H3z" /></svg>';
+                iconContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M14 2h7v7m-1-7l-14 14m0-7h7v7" /></svg>`; // Project icon
+            } else if (currentPage.includes("Photos.html")) {
+                iconContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15l-5-5L5 19" /></svg>`; // Camera icon
             } else if (currentPage.includes("about.html")) {
-                iconContainer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zM12 12c-1.105 0-2 .895-2 2v2h4v-2c0-1.105-.895-2-2-2zM12 4c-4.418 0-8 3.582-8 8v2h16v-2c0-4.418-3.582-8-8-8z" /></svg>';
+                iconContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-3-3m3 3l3-3M5 20h14" /></svg>`; // About icon
             }
         };
+
+        function showDownloadMessage(event) {
+            event.preventDefault(); // Prevent default link behavior
+
+            // Trigger the download first
+            const link = event.target;
+            const href = link.getAttribute("href");
+            const a = document.createElement("a");
+            a.href = href;
+            a.download = "";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            // Show the blur overlay with animation
+            const overlay = document.getElementById("download-overlay");
+            overlay.classList.remove("hidden");
+            setTimeout(() => {
+                overlay.classList.add("opacity-100");
+            }, 10); // Small delay to trigger the CSS transition
+
+            // Hide the overlay after 5 seconds
+            setTimeout(() => {
+                overlay.classList.remove("opacity-100");
+                setTimeout(() => {
+                    overlay.classList.add("hidden");
+                }, 500); // Wait for the fade-out animation to complete
+            }, 5000);
+        }
+
+        function showBowlingDownloadMessage(e) {
+            e.preventDefault();
+            const btn = e.currentTarget;
+            const overlay = btn.closest('.project-item').querySelector('#bowling-downloads-overlay');
+            btn.classList.add('blur');
+            overlay.classList.remove('hidden');
+            setTimeout(() => {
+                btn.classList.remove('blur');
+                overlay.classList.add('hidden');
+                window.location.href = btn.href;
+            }, 2000);
+        }
     </script>
 </body>
 </html>
