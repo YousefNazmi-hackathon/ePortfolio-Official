@@ -147,7 +147,7 @@
                 <p class="text-white mb-4">
                     Download my Flappy Bird project and play it on your computer! This game was created using Python and Pygame.
                 </p>
-                <a href="https://hwdsbonca-my.sharepoint.com/:u:/g/personal/yabdelsa2862_hwdsb_on_ca/Eb_I1qjcw6pMkw-SF6m2NUkBI4_SGb2tGoDWOLNx0ZtoCg?e=LyzaF7" class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-600 shadow-lg hover:shadow-2xl" onclick="showDownloadMessage(event)">
+                <a href="FlappyBird.7z" onclick="showDownloadMessage(event)">
                     Download
                 </a>
             </div>
@@ -164,7 +164,7 @@
                 <p class="text-white mb-4">
                     A PowerPoint presentation exploring various career paths impacted by Artificial Intelligence. Hover to preview slides!
                 </p>
-                <a href="./assets/Careers.pptx" class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-600 shadow-lg hover:shadow-2xl">
+                <a href="./assets/Careers.pptx" class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-600 shadow-lg hover:shadow-2xl" onclick="showDownloadMessage(event)">
                     Download PPTX
                 </a>
             </div>
@@ -176,14 +176,41 @@
             </div>
         </div>
 
+        <!-- Bowling Game (Unity) -->
+        <div class="project-item bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-2xl flex items-center gap-8 mb-10">
+            <div>
+                <h3 class="text-white text-2xl font-semibold mb-4">Bowling Game (Unity)</h3>
+                <p class="text-white mb-4">
+                    I created a Bowling game in Unity! You can play it right in your browser below, or download the standalone build to play on your computer.
+                </p>
+                <div class="flex gap-4">
+                    <a href="Bowling.zip" download class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-600 shadow-lg hover:shadow-2xl download-btn" onclick="showBowlingDownloadMessage(event)">
+                        Download Bowling
+                    </a>
+                </div>
+                <!-- Overlay (initially hidden) -->
+                <div id="bowling-downloads-overlay" class="hidden absolute left-0 top-0 w-full h-full flex items-start justify-end pointer-events-none z-10">
+                    <div class="flex flex-col items-center mt-2 mr-2">
+                        <span class="text-white text-xl font-semibold">Check your downloads</span>
+                        <span style="font-size:2.5rem;line-height:1;">&#8593;</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Optional: Add a bowling image if you have one -->
+            
+            <div class="bg-gray-700 p-4 rounded-lg shadow-md">
+                <img src="./images/bowling.png" alt="Bowling Game" class="w-full rounded-lg">
+            </div>
+        </div>
+
         <!-- Unity Game Project Card -->
         <div class="project-item bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-2xl flex flex-col md:flex-row items-center gap-8 fade-in">
             <div class="flex-1">
-                <h3 class="text-2xl font-bold mb-2">Unity Game</h3>
+                <h3 class="text-2xl font-bold mb-2">Unity Game (BETA)</h3>
                 <p class="mb-4">A fun Unity game made by me! Play it in your browser or download to play offline.</p>
                 <div class="flex gap-4">
                     <a href="UnityGame.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition">Play Now</a>
-                    <a href="SpaceShooter.7z" download class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold transition">Download</a>
+                    <a href="SpaceShooter.7z" download class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold transition" onclick="showDownloadMessage(event)">Download</a>
                 </div>
             </div>
             <div class="flex flex-col items-center">
@@ -277,6 +304,19 @@
                     overlay.classList.add("hidden");
                 }, 500); // Wait for the fade-out animation to complete
             }, 5000);
+        }
+
+        function showBowlingDownloadMessage(e) {
+            e.preventDefault();
+            const btn = e.currentTarget;
+            const overlay = btn.closest('.project-item').querySelector('#bowling-downloads-overlay');
+            btn.classList.add('blur');
+            overlay.classList.remove('hidden');
+            setTimeout(() => {
+                btn.classList.remove('blur');
+                overlay.classList.add('hidden');
+                window.location.href = btn.href;
+            }, 2000);
         }
     </script>
 </body>
